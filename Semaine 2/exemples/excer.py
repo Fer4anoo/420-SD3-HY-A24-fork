@@ -1,0 +1,60 @@
+from PySide6.QtWidgets import QMainWindow, QStatusBar, QToolBar, QApplication, QPushButton, QDialog
+from PySide6.QtGui import QAction, QKeySequence, QIcon
+from PySide6.QtCore import QSize
+
+class Fenetreprincipale(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.setWindowTitle("Mon application")
+
+        menus = self.menuBar()
+        self.creer_menus(menus)
+
+        self.barre_status = QStatusBar()
+        self.barre_status.setStatusTip("cliquer un bouton")
+
+        #barre d'outils
+        boutton_test = QPushButton("Test")
+        boutton_test.pressed.connect(self.outil)
+        barre_outils = QToolBar("barre d'outils")
+        barre_outils.addWidget(boutton_test)
+        self.addToolBar(barre_outils)
+
+
+
+
+    def creer_menus(self, menus):
+        #premier menu
+        nom_menu = menus.addMenu("&Menu1")
+        action1 = QAction(text= "test!", parent = self)
+        action1.setStatusTip("Menu1")
+        action1.triggered.connect(self.action1_execute)
+        nom_menu.addAction(action1)
+
+        #deuxieme menu
+        nom_menu2 = menus.addMenu("M&enu2")
+        action2 = QAction(text = "Hello!", parent= self)
+        action2.setStatusTip("Menu2")
+        action2.triggered.connect(self.action2_execute)
+        nom_menu2.addAction(action2)
+
+        #menu_quitter =
+
+
+    def action1_execute(self):
+        print("yeahhh!")
+
+    def action2_execute(self):
+        print("nooooo!")
+
+    def outil(self):
+        print("boutton outil")
+
+
+
+
+
+
+
+
