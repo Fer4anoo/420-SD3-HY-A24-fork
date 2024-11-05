@@ -23,6 +23,7 @@ class Fenetre(QMainWindow):
             QMainWindow.mousePressEvent(self, event)
 
 
+
 app = QApplication()
 fenetre = Fenetre()
 fenetre.show()
