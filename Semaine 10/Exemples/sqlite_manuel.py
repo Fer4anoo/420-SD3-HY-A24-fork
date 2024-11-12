@@ -41,7 +41,7 @@ class BasesSQL(QMainWindow):
             text += str(j) + "\n"
         self.textarea.setText(self.textarea.toPlainText() + "\n" + text)
         self.textarea.setText(self.textarea.toPlainText() + "\nSuppression de la table\n")
-        jeux_db.supprimer_table()
+        # jeux_db.supprimer_table()
 
 
 # Classe représentant un jeu
@@ -84,7 +84,7 @@ class JeuxBD:
                          "', '" + str(liste_jeux[idx].annee) + "')")
             if idx != len(liste_jeux) - 1:
                 requete += ","
-
+        print(f"Insérer requête: {requete}")
         curseur.execute(requete)
         # Lorsque l'on insère un enregistrement, une transaction est implicitement créée. Il faut alors faire un
         # "commit" pour signifier la fin de la transaction et appliquer les changements
@@ -94,6 +94,7 @@ class JeuxBD:
         # Créer un curseur pour exécuter une requête
         curseur = self.con.cursor()
         requete = "DELETE FROM jeu WHERE nom = '" + nom + "'"
+        print(f"Supprimer requête: {requete}")
         curseur.execute(requete)
         self.con.commit()
 
@@ -102,6 +103,7 @@ class JeuxBD:
         curseur = self.con.cursor()
         # Sélectionne toutes les colonnes, il est possible de sélectionner seulement certaines colonnes
         requete = "SELECT * FROM jeu WHERE nom = '" + nom + "'"
+        print(f"Sélection requête: {requete}")
         curseur.execute(requete)
         # va chercher le premier enregistrement, retourne un Tuple contenant la valeur de chaque colonne
         resultat = curseur.fetchone()
@@ -112,6 +114,7 @@ class JeuxBD:
         curseur = self.con.cursor()
         # Sélectionne toutes les colonnes
         requete = "SELECT * FROM jeu"
+        print(f"Sélection tous requête: {requete}")
         curseur.execute(requete)
         # va chercher tous les enregistrements retournés par la requête, retourne une liste de Tuple
         resultats = curseur.fetchall()

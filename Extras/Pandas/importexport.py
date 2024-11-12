@@ -24,5 +24,8 @@ class Impex:
         self.df.to_json('./output/Water-Qual-Eau-Sites-National.json', orient='records')
         # D'autres exportations sont possibles (to_sql, to_html, to_latex, etc.)
 
+        # information sommaire sur le DataFrame (compte, moyenne, écart-type, minimum, maximum, percentiles, max)
+        print(self.df.describe())
+
 
 impex = Impex()
