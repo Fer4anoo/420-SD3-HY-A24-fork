@@ -1,5 +1,5 @@
 # Utilisation de bases de données document
-Pour faire l'exercice plus bas, vous avez le choix entre utiliser MongoDB vis AtlasDB ou utiliser TinyDB.
+Pour faire l'exercice plus bas, vous avez le choix entre utiliser MongoDB via AtlasDB ou utiliser TinyDB.
 
 
 ## Se créer un compte gratuit AtlasDB

@@ -45,7 +45,7 @@ async def modifier_etudiant(no_da: int, etudiant: Etudiant):
 
 # Pour tester l'API, on peut utiliser l'outil curl ou Postman
 
-# pour exécuter le serveur, on peut utiliser la commande: fastapi dev exemple_server
+# pour exécuter le serveur, on peut utiliser la commande: fastapi dev exemple_server.py
 # ou: python -m uvicorn exemple_server:app --reload
 
 

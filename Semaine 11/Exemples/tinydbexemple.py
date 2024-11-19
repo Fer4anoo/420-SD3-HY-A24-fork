@@ -92,8 +92,8 @@ class TinyDbClient:
 
     def find_by_race(self, race: str):
         # On utilise un objet Query qui spécifie les conditions sur les attributs
-        Chien = Query()
-        docs = self.table_chien.search(Chien.race == race)
+        query_chien = Query()
+        docs = self.table_chien.search(query_chien.race == race)
         return docs
 
     def update_qualite(self, doc: {}, age: int):
