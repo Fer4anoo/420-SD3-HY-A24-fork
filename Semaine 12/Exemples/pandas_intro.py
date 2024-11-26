@@ -13,7 +13,7 @@ print(df)
 
 # Ajouter une colonne
 df["Province"] = ["Québec", "Québec", "Québec", "Québec", "Ontario"]
-print(f"Après ajout colonne{df}")
+print(f"Après ajout colonne\n{df}")
 
 # Supprimer une colonne
 # inplace=True permet de modifier le DataFrame original au lieu de retourner un nouveau DataFrame
